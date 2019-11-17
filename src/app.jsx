@@ -2,7 +2,7 @@ import '@tarojs/async-await'
 import Taro, { Component } from '@tarojs/taro'
 import { Provider } from '@tarojs/redux'
 
-import Index from './pages/index'
+import Index from './pages/remenber'
 
 import configStore from './store'
 
@@ -21,8 +21,8 @@ class App extends Component {
 
   config = {
     pages: [
-      'pages/index/index',
-      'pages/index/search/index',
+      'pages/remember/index',
+      'pages/remember/search/index',
       'pages/review/index'
     ],
     window: {

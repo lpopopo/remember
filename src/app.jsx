@@ -2,11 +2,10 @@ import '@tarojs/async-await'
 import Taro, { Component } from '@tarojs/taro'
 import { Provider } from '@tarojs/redux'
 
-import Index from './pages/remenber'
+import Index from './pages/index'
 
 import configStore from './store'
 
-import 'taro-ui/dist/style/index.scss'
 import './app.scss'
 
 // 如果需要在 h5 环境中开启 React Devtools
@@ -21,17 +20,38 @@ class App extends Component {
 
   config = {
     pages: [
-      'pages/remember/index',
-      'pages/remember/search/index',
-      'pages/review/index'
+      'pages/shouye/shouye',
+      'pages/review/review',
+      'pages/login/login',
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      color: "#33333",
+      selectedColor: "#FFC42F",
+      backgroundColor: "#fff",
+      borderStyle: "white",
+      list: [
+        {
+          pagePath: "pages/shouye/shouye",
+          text: "首页",
+          iconPath: "./assets/images/home.png",
+          selectedIconPath: "./assets/images/home1.png"
+        },
+        {
+          pagePath: "pages/review/review",
+          text: "复习",
+          iconPath: "./assets/images/review.png",
+          selectedIconPath: "./assets/images/review1.png"
+        }
+      ]
     }
   }
+  
 
   componentDidMount () {}
 

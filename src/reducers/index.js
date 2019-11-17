@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import counter from './counter'
+import openModel from './modelReducer'
 
 export default combineReducers({
-  counter
+    openModel
 })

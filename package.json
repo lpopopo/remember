@@ -1,8 +1,8 @@
 {
-  "name": "myApp",
+  "name": "remember",
   "version": "1.0.0",
   "private": true,
-  "description": "",
+  "description": "背单词小程序",
   "templateInfo": {
     "name": "redux",
     "typescript": false,
@@ -36,13 +36,11 @@
     "@tarojs/taro-swan": "1.3.22",
     "@tarojs/taro-tt": "1.3.22",
     "@tarojs/taro-weapp": "1.3.22",
-    "js-md5": "^0.7.3",
     "nerv-devtools": "^1.4.0",
     "nervjs": "^1.4.0",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "taro-axios": "^0.7.0",
     "taro-ui": "^2.2.4"
   },
   "devDependencies": {

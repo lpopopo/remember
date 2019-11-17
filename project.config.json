@@ -1,8 +1,8 @@
 {
 	"miniprogramRoot": "dist/",
-	"projectname": "myApp",
-	"description": "",
-	"appid": "touristappid",
+	"projectname": "remember",
+	"description": "背单词小程序",
+	"appid": "wx1ac7b94b878a7fe4",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,

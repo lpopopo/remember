@@ -1,0 +1,128 @@
+@import "~taro-ui/dist/style/components/modal.scss";
+@import "~taro-ui/dist/style/components/input-number.scss";
+@import "~taro-ui/dist/style/components/icon.scss";
+@import "~taro-ui/dist/style/components/tabs.scss";
+@import "~taro-ui/dist/style/components/badge.scss";
+
+page{
+  background-color: #eeeeee;
+}
+.indexPage {
+  width: 100%;
+  height: 380px;
+  padding-top: 10px;
+  background-color: #FFC42F;
+  border-radius: 0 0 160px 160px;
+}
+.user{
+  width: 96%;
+  height: 120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  .userImg{
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background-color: rgb(0, 0, 0);
+  }
+  .userName{
+    margin-left: 30px;
+    font-size: 36px;
+    font-family: "微软雅黑";
+    color: #333333;
+  }
+  .wordSearch{
+    background: white;
+    border-radius: 30px;
+    padding-left: 20px;
+    width: 240px;
+    height: 50px;
+    font-size: 24px;
+    color: grey;
+    margin-left: 160px;
+  }
+  .wordSearchBtn{
+    height: 50px;
+    padding: 0px 20px;
+    border: solid 1px rgb(255, 186, 12);
+    background: rgb(255, 186, 12);
+    font-size: 22px;
+    color: white;
+  }
+}
+.planPage{
+  width: 660px;
+  height: 540px;
+  margin: 20px auto;
+  border-radius: 20px;
+  background-color: white;
+  // background-color:rgb(56, 177, 247);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .planWordDate{
+    width: 80%;
+    height: 180px;
+    View{
+      display: flex;
+      padding-top: 30px;
+      justify-content: space-around;
+    }
+    .planTitle{
+      color: #585858;
+      font-size: 30px;
+    }
+    .planData{
+      color: black;
+      font-size: 60px;
+      .smallWord{
+        font-size: 30px;
+      }
+    }
+  }
+  .planChoose{
+    width: 70%;
+    height: 150px;
+    font-size: 24px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px #c4c4c4;
+    Text{
+      color: #585858;
+    }
+    .planBtn{
+      height: 50px;
+      font-size: 20px;
+      margin: 0;
+      background:none;
+      color: #585858;
+      border: solid 1px #8b8b8b;
+      border-radius: 40px;
+    }
+  }
+  .planProcess{
+    width: 70%;
+    height: 140px;
+    margin-top: 20px;
+    font-size: 30px;
+    color: #585858;
+    .Progress{
+     margin-top: 20px; 
+    }
+  }
+}
+.startBtn{
+  color: white;
+  letter-spacing: 4px;
+  background: #FFC42F;
+  padding: 0px;
+  width: 80%;
+  margin-top: 200px;
+  &::after{
+    border: none;
+    outline: none;
+  }
+}

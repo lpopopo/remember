@@ -1,0 +1,27 @@
+@font-face{
+    font-family: "smlie";
+    font-weight: normal;
+    font-style: normal;
+    src:url("../../static/font/iconfont.ttf")format('truetype')
+}
+
+.done{
+    width: 100%;
+    View{
+        line-height: 2em;
+        text-align: center;
+    }
+    .smile{
+        font-family: 'smlie';
+        font-size: 100px;
+        width: 4em;
+        line-height: 4em;
+        margin: 0 auto;
+        &::before{
+            content: "\e629";
+            width: 100%;
+            color:#FFC42F;
+            height: 100%;
+        }
+    }
+}

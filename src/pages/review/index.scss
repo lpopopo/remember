@@ -1,0 +1,22 @@
+.review-con{
+    width: 100%;
+    padding-top: 150px;
+    .con{
+        font-size: 25px;
+        width: 20em;
+        min-height: 20em;
+        margin: 0 auto;
+        .text{
+            font-size: 50px;
+            line-height: 3.5em;
+            text-align: center;
+        }
+    }
+}
+
+.at-button{
+    margin: 20px 0;
+    background-color:#FFC42F;
+    border: 1px solid #FFC42F;
+    border-radius: 0;
+}

@@ -1,0 +1,26 @@
+.review-con{
+    width:100%;
+    padding-top:100px;
+    display: flex;
+    justify-content:center;
+    .review{
+        View{
+            font-size:40px;
+            width: 13em;
+            line-height: 2.5em;
+            background-color: #f8f8f8;
+            text-align:center;
+            word-break:normal;
+        }
+        .question{
+            margin-bottom: 50px;
+        }
+        .choose{
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.error{
+    background-color: red;
+}

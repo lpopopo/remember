@@ -1,9 +1,9 @@
 import Taro, { Component } from '@tarojs/taro'
 import { connect } from '@tarojs/redux'
 import { View,Text,Button,Progress,Input} from '@tarojs/components'
-import Model from '../../Component/Model/model.jsx.js'
+import Model from '../../Component/Model/model'
 
-import './shouye.scss'
+import './index.scss'
 
 
 @connect(({ openModel }) => ({

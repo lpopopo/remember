@@ -20,8 +20,8 @@ class App extends Component {
 
   config = {
     pages: [
-      'pages/shouye/shouye',
-      'pages/review/review',
+      'pages/index/index',
+      'pages/review/index',
       'pages/login/login',
     ],
     window: {
@@ -37,13 +37,13 @@ class App extends Component {
       borderStyle: "white",
       list: [
         {
-          pagePath: "pages/shouye/shouye",
+          pagePath: "pages/index/index",
           text: "首页",
           iconPath: "./assets/images/home.png",
           selectedIconPath: "./assets/images/home1.png"
         },
         {
-          pagePath: "pages/review/review",
+          pagePath: "pages/review/index",
           text: "复习",
           iconPath: "./assets/images/review.png",
           selectedIconPath: "./assets/images/review1.png"

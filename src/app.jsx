@@ -22,7 +22,6 @@ class App extends Component {
     pages: [
       'pages/index/index',
       'pages/review/index',
-      'pages/login/login',
       'pages/remenber/index',
       'pages/remenber/search/index'
     ],

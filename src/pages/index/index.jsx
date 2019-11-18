@@ -15,14 +15,12 @@ class Index extends Component {
       isOpened: false
     }
   }
-  componentDidMount(){
-    console.log(this.props)
-  }
-  toLogin(){
-    Taro.navigateTo({
-      url: '/pages/login/login',
-    })    
-  }
+
+  // toLogin(){
+  //   Taro.navigateTo({
+  //     url: '/pages/login/login',
+  //   })    
+  // }
   rememberWord(){
     Taro.navigateTo({
       url:'../remenber/index'
@@ -53,11 +51,12 @@ class Index extends Component {
       <View className='indexPage'>
         <Model isOpened={this.state.isOpened} onCancel={()=>this.onCancel()} onOk={()=>this.onOk()}/>
         <View className='user'>
-          <View onClick={()=>this.toLogin()} className='userImg'></View>
+          <View className='userImg'></View>
           <View className='userName'>刘帅</View>
           <Input className='wordSearch' type='text' placeholder='搜索单词' />
           <Button plain={true} className='wordSearchBtn'>搜索</Button>
         </View>
+
         <View className='planPage'>
           <View className='planWordDate'>
             <View className='planTitle'><Text>剩余</Text><Text>今日单词</Text></View>

@@ -36,7 +36,8 @@ class Review extends Component {
         this.errTuoch = this.errTuoch.bind(this)
     }
     config={
-        navigationBarTitleText: '复习单词'        
+        navigationBarTitleText: '复习单词',
+        navigationBarBackgroundColor: "#FFC42F",        
     }
     componentWillMount(){
         //请求复习单词的数据

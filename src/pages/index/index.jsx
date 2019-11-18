@@ -16,11 +16,6 @@ class Index extends Component {
     }
   }
 
-  // toLogin(){
-  //   Taro.navigateTo({
-  //     url: '/pages/login/login',
-  //   })    
-  // }
   rememberWord(){
     Taro.navigateTo({
       url:'../remenber/index'

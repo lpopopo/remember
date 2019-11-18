@@ -1,0 +1,26 @@
+page{
+    background-color: #eeeeee;
+}
+.reviewrap{
+    margin-top: 80px;
+    display: flex;
+    Button{
+        font-size: 40px;
+        color: white;
+        font-weight: bold;
+        letter-spacing: 10px;
+        width: 40%;
+        height: 200px;
+        background: #FFC42F;
+        &::after{
+            border: none;
+            outline: none;
+          }
+    }
+}
+.reviewText{
+    text-align: center;
+    color: grey;
+    font-size: 20px;
+    margin-top: 300px;
+}

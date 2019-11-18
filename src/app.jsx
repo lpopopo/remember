@@ -21,6 +21,7 @@ class App extends Component {
   config = {
     pages: [
       'pages/index/index',
+      'pages/reviewrap/reviewrap',
       'pages/review/index',
       'pages/remenber/index',
       'pages/remenber/search/index'
@@ -44,7 +45,7 @@ class App extends Component {
           selectedIconPath: "./assets/images/home1.png"
         },
         {
-          pagePath: "pages/review/index",
+          pagePath: "pages/reviewrap/reviewrap",
           text: "复习",
           iconPath: "./assets/images/review.png",
           selectedIconPath: "./assets/images/review1.png"

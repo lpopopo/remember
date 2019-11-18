@@ -33,8 +33,9 @@
   position: absolute;
   bottom: 50px;
   .detail-btn{
-    font-size: 25px;
-    line-height: 4em;
+    font-size: 32px;
+    line-height: 3em;
+    width: 6em;
     text-align: center;
     margin-right: 50px;
   }
@@ -43,9 +44,10 @@
 .at-button{
   border: 2px solid #FFC42F;
   background-color:#FFC42F ;
+  color:#fff;
   .right , .left{
+    text-align: center;
     font-family: 'icon';
-    color:#fff;
     &::after{
       display: block;
       font-size: 40px;

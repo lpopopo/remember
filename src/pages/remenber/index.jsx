@@ -52,7 +52,9 @@ class Index extends Component {
   componentDidHide (){
     clearInterval(this.timer)
   }
-
+  componentWillUnmount(){
+    clearInterval(this.timer)
+  }
   toPage(word){
     Taro.navigateTo({
 		  url: `./search/index?en=${word}`

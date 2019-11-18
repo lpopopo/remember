@@ -24,7 +24,9 @@ class Index extends Component {
     })    
   }
   rememberWord(){
-    console.log('跳转到单词记忆组件')
+    Taro.navigateTo({
+      url:'../remenber/index'
+    })
   }
   makePlan(){
     this.setState({
@@ -75,7 +77,7 @@ class Index extends Component {
             />
           </View>
         </View>
-        <Button onClick={()=>this.rememberWord()} className='startBtn'>开始背单词吧</Button>
+        <Button onClick={this.rememberWord} className='startBtn'>开始背单词吧</Button>
       </View>
     )
   }

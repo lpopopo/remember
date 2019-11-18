@@ -23,6 +23,8 @@ class App extends Component {
       'pages/index/index',
       'pages/review/index',
       'pages/login/login',
+      'pages/remenber/index',
+      'pages/remenber/search/index'
     ],
     window: {
       backgroundTextStyle: 'light',

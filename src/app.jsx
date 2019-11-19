@@ -24,7 +24,8 @@ class App extends Component {
       'pages/reviewrap/reviewrap',
       'pages/review/index',
       'pages/remenber/index',
-      'pages/remenber/search/index'
+      'pages/remenber/search/index',
+      'pages/glossary/glossary'
     ],
     window: {
       backgroundTextStyle: 'light',

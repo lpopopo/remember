@@ -22,7 +22,7 @@ Taro.checkSession({
         if (res.code) {
           //发起网络请求
           Taro.request({
-            url: that.globalData.path + '/miniLogin/login.ajax',
+            url: 'url',
             data: {
               code: res.code
             },

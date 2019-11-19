@@ -15,6 +15,11 @@ class Index extends Component {
     navigationBarBackgroundColor: "#FFC42F",
   }
 
+  toText(){
+    Taro.navigateTo({
+        url:'../review/index',
+      })
+  }
   toReview(){
     Taro.navigateTo({
         url:'../review/index',

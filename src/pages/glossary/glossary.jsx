@@ -13,7 +13,7 @@ class Glossary extends Component {
 
     }
     config = {
-        navigationBarTitleText: '生词本',
+        navigationBarTitleText: '单词本',
         navigationBarBackgroundColor: "#FFC42F",
     }
     render() { 

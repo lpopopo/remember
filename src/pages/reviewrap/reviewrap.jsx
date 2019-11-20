@@ -15,11 +15,7 @@ class Index extends Component {
     navigationBarBackgroundColor: "#FFC42F",
   }
 
-  toText(){
-    Taro.navigateTo({
-        url:'../review/index',
-      })
-  }
+  
   toReview(){
     Taro.navigateTo({
         url:'../review/index',
@@ -34,7 +30,7 @@ class Index extends Component {
     return (
         <View>
             <View className='reviewrap'>
-                <Button onClick={()=>this.toGlossary()}>生词本</Button>
+                <Button onClick={()=>this.toGlossary()}>单词本</Button>
                 <Button onClick={()=>this.toReview()}>单词自检</Button>
             </View>
             <View className='reviewText'>更多功能，敬请期待！</View>

@@ -25,7 +25,8 @@ class App extends Component {
       'pages/review/index',
       'pages/remenber/index',
       'pages/remenber/search/index',
-      'pages/glossary/glossary'
+      'pages/glossary/glossary',
+      'pages/login/login',
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -56,7 +57,45 @@ class App extends Component {
   }
   
 
-  componentDidMount () {}
+  componentWillMount() {
+    // let uid=Taro.getStorageSync("uid")
+    let uid=1;
+    if(!uid){
+      Taro.login({
+        success:function(res){
+          console.log(res)
+          var code = res.code;
+          //code发送
+          Taro.request({
+            url: 'http://7uxvmw.natappfree.cc', 
+            data: {
+              "code":code
+            },
+            method: "GET",
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            //成功返回
+            success: function (res) {
+              console.log(res)
+              if(res.statusCode==200){
+                // Taro.setStorageSync("uid",res.data.code)
+                Taro.navigateTo({
+                  url:'/pages/login/login'
+                })
+              }
+            },fail:function(){
+              Taro.showToast({
+                title: '网络异常',
+                duration: 1000,
+                icon:"none"
+              })
+            }
+          })
+        }
+      })
+    }
+  }
 
   componentDidShow () {}
 

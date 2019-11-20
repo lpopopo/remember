@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { connect } from '@tarojs/redux'
-import { View,Text,Button,Progress,Input} from '@tarojs/components'
+import { View,Text,Button,Progress,Input,Image} from '@tarojs/components'
 import Model from '../../Component/Model/model'
 
 import './index.scss'
@@ -12,8 +12,21 @@ import './index.scss'
 class Index extends Component {
   constructor(){
     this.state={
-      isOpened: false
+      isOpened: false,
+      name: '未登录',
+      headUrl:''
     }
+  }
+  
+  componentDidMount(){
+    const userInfo=Taro.getStorageSync(
+      "userInfo",
+    )
+    console.log(userInfo)
+    this.setState({
+      name:userInfo.nickName,
+      headUrl:userInfo.avatarUrl
+    })
   }
 
   rememberWord(){
@@ -46,8 +59,8 @@ class Index extends Component {
       <View className='indexPage'>
         <Model isOpened={this.state.isOpened} onCancel={()=>this.onCancel()} onOk={()=>this.onOk()}/>
         <View className='user'>
-          <View className='userImg'></View>
-          <View className='userName'>刘帅</View>
+          <Image className='userImg' src={headUrl}></Image>
+          <View className='userName'>{this.state.name}</View>
           <Input className='wordSearch' type='text' placeholder='搜索单词' />
           <Button plain={true} className='wordSearchBtn'>搜索</Button>
         </View>

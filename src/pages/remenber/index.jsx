@@ -76,7 +76,7 @@ class Index extends Component {
       )
     }
     return(
-       <Done></Done>
+       <Done type="remember"></Done>
     )                                                                                                                                      
   }
 }

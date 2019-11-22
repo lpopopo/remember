@@ -19,12 +19,16 @@ class Done extends Component {
         super(props);
         this.state = {}
     }
-
-    componentDidShow(){
+    componentWillMount(){
         //发送请求给后端进行相应的背诵记录
         //相当于还有完成自己设定的任务才算完成任务,初始化index,一遍重新重新请求
         //请求完成之后，自动跳转回首页
-        this.props.rememberInit()
+        if(this.props.type === 'remember'){
+            this.props.rememberInit()
+            console.log(1)
+        }
+    }
+    componentDidShow(){
     }
     componentDidHide(){
     }

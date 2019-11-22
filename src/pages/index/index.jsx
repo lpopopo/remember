@@ -6,8 +6,9 @@ import Model from '../../Component/Model/model'
 import './index.scss'
 
 
-@connect(({ openModel }) => ({
-  openModel
+@connect(({ openModel,counter }) => ({
+  openModel,counter
+
 }))
 class Index extends Component {
   constructor(){
@@ -22,7 +23,7 @@ class Index extends Component {
     const userInfo=Taro.getStorageSync(
       "userInfo",
     )
-    console.log(userInfo)
+    console.log(userInfo,this.props)
     this.setState({
       name:userInfo.nickName,
       headUrl:userInfo.avatarUrl
@@ -84,7 +85,7 @@ class Index extends Component {
             />
           </View>
         </View>
-        <Button onClick={this.rememberWord} className='startBtn'>开始背单词吧</Button>
+        <Button onClick={this.rememberWord} className='startBtn'>{this.props.counter.RememberOnce==true?'继续背单词':'开始背单词吧'}</Button>
       </View>
     )
   }

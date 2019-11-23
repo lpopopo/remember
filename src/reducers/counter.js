@@ -7,7 +7,7 @@ const INITIAL_STATE = {
   word : [{en: 'hello'  , zh : '你好'}, {en : 'hi' , zh : '嗨'} , {en : 'big' , zh:'大的'}] ,
   index : 0,
   finall:3,
-  RememberOnce : false
+  RememberOnce : true
 }
 
 

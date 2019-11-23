@@ -1,4 +1,4 @@
-import {  CUTDOWN ,  INDEXADDOFREMEMBER , DONE  , REVIEWINDEX , REMEMBERINIT , INDEXINIT} from '../constants/counter'
+import {  CUTDOWN ,  INDEXADDOFREMEMBER , DONE  , REVIEWINDEX , REMEMBERINIT , INDEXINIT , REMEMBERONCEINIT} from '../constants/counter'
 // 首先进行每10个单词进行请求
 
 
@@ -52,6 +52,10 @@ export default function counter (state = INITIAL_STATE, action) {
            let indexInit = JSON.parse(JSON.stringify(state))
            indexInit.index = 0
            return indexInit
+           case REMEMBERONCEINIT:
+             let RememberOnceData = JSON.parse(JSON.stringify(state))
+             RememberOnceData.RememberOnce = false
+             return RememberOnceData
      default:
        return state
   }

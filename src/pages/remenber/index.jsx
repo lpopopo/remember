@@ -3,7 +3,7 @@ import { View, Text } from '@tarojs/components'
 import {AtButton} from 'taro-ui'
 import { connect } from '@tarojs/redux'
 
-import { cutDown , indexAddOfRemember } from '../../actions/counter'
+import { cutDown , indexAddOfRemember , rememberOnce } from '../../actions/counter'
 
 //中间的背单词组件
 import Remember from '../../Component/remember/rem'
@@ -20,6 +20,9 @@ import './index.scss'
   },
   cut() {
     dispatch(cutDown())
+  },
+  rememberToFalse(){
+    dispatch(rememberOnce())
   }
 }))
 
@@ -49,6 +52,7 @@ class Index extends Component {
         clearInterval(this.timer)
       }
     } , 1000) 
+    this.props.rememberToFalse()
    }
 
   componentDidHide (){

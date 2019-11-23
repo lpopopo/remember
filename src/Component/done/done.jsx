@@ -33,7 +33,7 @@ class Done extends Component {
     }
     componentDidShow(){
         if(this.props.type === 'remember'){
-            this.props.indexInit()
+            this.props.indexDoneInit()
         }
     }
     componentDidHide(){

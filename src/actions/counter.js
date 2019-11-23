@@ -1,6 +1,6 @@
 import {
 CUTDOWN,
-INDEXADD,
+INDEXADDOFREMEMBER,
 DONE,
 REVIEWINDEX,
 REMEMBERINIT,
@@ -18,9 +18,9 @@ export const minus = () => {
   }
 }
 
-export  const indexAdd = () => {
+export  const indexAddOfRemember = () => {
   return{
-    type : INDEXADD
+    type : INDEXADDOFREMEMBER
   }
 }
 

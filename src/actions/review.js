@@ -13,7 +13,7 @@ export const  ajax = (data) => {
     }
 }
 
-export const indexAdd = ()=>{
+export const indexAddOfReview = ()=>{
     return{
         type:INDEXADD
     }

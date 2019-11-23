@@ -10,13 +10,13 @@ import Done from '../../Component/done/done'
 
 import { connect } from '@tarojs/redux'
 
-import {indexAdd , errTouch , getWord} from '../../actions/review'
+import {indexAddOfReview , errTouch , getWord} from '../../actions/review'
 
 @connect(({ reviewer }) => ({
     reviewer
   }), (dispatch) => ({
       index(){
-          dispatch(indexAdd())
+          dispatch(indexAddOfReview())
       },
       err(){
           dispatch(errTouch())
@@ -36,6 +36,9 @@ class Review extends Component {
         // const action = getWord()
         // store.dispatch(action)
     }
+    componentDidMount(){
+        console.log(this.props)
+    }
     // 当按钮的点击事件点击正确时，切换进行下一个单词的复习
     // 并进行判断state，是否将该单次加入错误队列中
     // 最后对state值进行重置
@@ -47,7 +50,6 @@ class Review extends Component {
         }else{
             this.props.err()
         }
-        console.log(this.state)
     }
     render() { 
         const {index} = this.props.reviewer
@@ -62,11 +64,11 @@ class Review extends Component {
                     <View className="con">
                         <View className="text">{soure.en}</View>
                         {
-                            word.map((value, index) => {
+                            word.map((value, id) => {
                                 return (
                                     <AtButton
-                                        key={index+value}
-                                        onClick={this.clickToAnswer.bind(this, index , answer)}
+                                        key={id+value}
+                                        onClick={this.clickToAnswer.bind(this, id , answer)}
                                     >{value}</AtButton>
                                 )
                             })

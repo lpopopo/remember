@@ -3,7 +3,7 @@ import { View, Text } from '@tarojs/components'
 import {AtButton} from 'taro-ui'
 import { connect } from '@tarojs/redux'
 
-import { cutDown , indexAdd } from '../../actions/counter'
+import { cutDown , indexAddOfRemember } from '../../actions/counter'
 
 //中间的背单词组件
 import Remember from '../../Component/remember/rem'
@@ -16,7 +16,7 @@ import './index.scss'
   counter
 }), (dispatch) => ({
   add(){
-    dispatch(indexAdd())
+    dispatch(indexAddOfRemember())
   },
   cut() {
     dispatch(cutDown())
@@ -35,7 +35,12 @@ class Index extends Component {
   componentWillReceiveProps (nextProps) {
   }
 
-  componentWillUnmount () {}
+  componentWillUnmount () {
+  }
+
+  componentDidMount(){
+    console.log(this.props)
+  }
 
   componentDidShow () {
     this.timer = setInterval(()=>{
@@ -43,10 +48,7 @@ class Index extends Component {
       if(this.props.counter.index > this.props.counter.finall - 1){
         clearInterval(this.timer)
       }
-    } , 1000)
-    // Taro.navigateTo({
-    //   url: '../../pages/review/index'
-    // })    
+    } , 1000) 
    }
 
   componentDidHide (){

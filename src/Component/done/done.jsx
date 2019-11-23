@@ -12,7 +12,7 @@ import { rememberInit , indexInit} from '../../actions/counter'
       remember(){
           dispatch(rememberInit())
       },
-      index(){
+      indexDoneInit(){
           dispatch(indexInit())
       }
   }))
@@ -27,14 +27,14 @@ class Done extends Component {
         //发送请求给后端进行相应的背诵记录
         //相当于还有完成自己设定的任务才算完成任务,初始化index,一遍重新重新请求
         //请求完成之后，自动跳转回首页
-        if(this.props.type === "remember"){
+        if(this.props.type === 'remember'){
             this.props.remember()
-        } 
+        }
     }
     componentDidShow(){
-        // if(this.props.type === 'remember'){
-        //     this.props.index()
-        // }
+        if(this.props.type === 'remember'){
+            this.props.indexInit()
+        }
     }
     componentDidHide(){
     }

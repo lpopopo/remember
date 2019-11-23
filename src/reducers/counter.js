@@ -1,10 +1,10 @@
-import {  CUTDOWN ,  INDEXADD , DONE  , REVIEWINDEX , REMEMBERINIT , INDEXINIT} from '../constants/counter'
+import {  CUTDOWN ,  INDEXADDOFREMEMBER , DONE  , REVIEWINDEX , REMEMBERINIT , INDEXINIT} from '../constants/counter'
 // 首先进行每10个单词进行请求
 
 
 const INITIAL_STATE = {
   down : 10 ,
-  word : [{en: 'hello'  , zh : '你好'}, {en : 'hi' , zh : '嗨'} , {en : 'big' , zh:'大的'} ] ,
+  word : [{en: 'hello'  , zh : '你好'}, {en : 'hi' , zh : '嗨'} , {en : 'big' , zh:'大的'}] ,
   index : 0,
   finall:3,
   RememberOnce : false
@@ -24,7 +24,7 @@ export default function counter (state = INITIAL_STATE, action) {
       }
       back.down--
       return back
-       case INDEXADD: 
+       case INDEXADDOFREMEMBER: 
        let backA = JSON.parse(JSON.stringify(state))
        if(backA.index <  backA.word.length -1 ){
         backA.index++
@@ -45,6 +45,7 @@ export default function counter (state = INITIAL_STATE, action) {
        return review
        case REMEMBERINIT:
          let rememberInit = JSON.parse(JSON.stringify(state))
+        //  rememberInit.index = 0
          rememberInit.RememberOnce = true
          return rememberInit
          case INDEXINIT:

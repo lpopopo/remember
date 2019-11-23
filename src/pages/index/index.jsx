@@ -15,7 +15,7 @@ class Index extends Component {
     this.state={
       isOpened: false,
       name: '未登录',
-      headUrl:''
+      headUrl:'',
     }
   }
   
@@ -26,16 +26,9 @@ class Index extends Component {
     console.log(userInfo,this.props.counter)
     this.setState({
       name:userInfo.nickName,
-      headUrl:userInfo.avatarUrl
+      headUrl:userInfo.avatarUrl,
     })
   }
-  componentDidShow(){
-    const userInfo=Taro.getStorageSync(
-      "userInfo",
-    )
-    console.log(userInfo,this.props.counter) 
-  }
-
   rememberWord(){
     Taro.navigateTo({
       url:'../remenber/index'
@@ -60,6 +53,7 @@ class Index extends Component {
     navigationBarTitleText: '背了么',
     navigationBarBackgroundColor: "#FFC42F",
   }
+
   render () {
     const {value,title}=this.props.openModel;
     return (
@@ -91,7 +85,7 @@ class Index extends Component {
             />
           </View>
         </View>
-        <Button onClick={this.rememberWord} className='startBtn'>{this.props.counter.RememberOnce==true?'继续背单词':'开始背单词吧'}</Button>
+        <Button onClick={this.rememberWord} className='startBtn'>{this.props.counter.RememberOnce==true?'开始背新单词吧':'继续背单词'}</Button>
       </View>
     )
   }

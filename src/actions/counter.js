@@ -4,6 +4,7 @@ INDEXADD,
 DONE,
 REVIEWINDEX,
 REMEMBERINIT,
+INDEXINIT
 } from '../constants/counter'
 
 export const cutDown = () => {
@@ -39,6 +40,12 @@ export const reviewIndex =(index) =>{
 export const rememberInit = ()=>{
   return{
     type:REMEMBERINIT
+  }
+}
+
+export const indexInit = ()=>{
+  return{
+    type : INDEXINIT
   }
 }
 

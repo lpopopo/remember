@@ -23,11 +23,17 @@ class Index extends Component {
     const userInfo=Taro.getStorageSync(
       "userInfo",
     )
-    console.log(userInfo,this.props)
+    console.log(userInfo,this.props.counter)
     this.setState({
       name:userInfo.nickName,
       headUrl:userInfo.avatarUrl
     })
+  }
+  componentDidShow(){
+    const userInfo=Taro.getStorageSync(
+      "userInfo",
+    )
+    console.log(userInfo,this.props.counter) 
   }
 
   rememberWord(){

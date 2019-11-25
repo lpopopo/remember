@@ -59,12 +59,13 @@ class App extends Component {
 
   componentWillMount() {
     // let uid=Taro.getStorageSync("uid")
-    let uid=1;
-    if(!uid){
+     let uid=1;
+    if(uid){
       Taro.login({
         success:function(res){
           console.log(res)
           var code = res.code;
+          console.log("code%s" , code)
           //code发送
           Taro.request({
             url: 'http://7uxvmw.natappfree.cc', 

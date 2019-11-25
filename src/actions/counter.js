@@ -8,6 +8,8 @@ INDEXINIT,
 REMEMBERONCEINIT
 } from '../constants/counter'
 
+import {axios} from 'taro-axios'
+
 export const cutDown = () => {
   return {
     type : CUTDOWN 
@@ -38,9 +40,21 @@ export const reviewIndex =(index) =>{
   }
 }
 
-export const rememberInit = ()=>{
+export const rememberInit = (data)=>{
   return{
-    type:REMEMBERINIT
+    type:REMEMBERINIT,
+    data
+  }
+}
+
+export const  getRememberWord = () =>{
+  const url = '?flag=1'
+  return (dispatch) =>{
+    axios.post(url ).then((res)=>{
+      const  rememberWord = res.data
+      const action = rememberInit(rememberWord)
+      dispatch(action)
+    })
   }
 }
 

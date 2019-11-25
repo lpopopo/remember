@@ -3,6 +3,7 @@ import {  CUTDOWN ,  INDEXADDOFREMEMBER , DONE  , REVIEWINDEX , REMEMBERINIT , I
 
 
 const INITIAL_STATE = {
+  down : 10 ,
   word : [{en: 'hello'  , zh : '你好'}, {en : 'hi' , zh : '嗨'} , {en : 'big' , zh:'大的'}] ,
   index : 0,
   finall:3,
@@ -45,8 +46,6 @@ export default function counter (state = INITIAL_STATE, action) {
        case REMEMBERINIT:
          let rememberInit = JSON.parse(JSON.stringify(state))
         //  rememberInit.index = 0
-        rememberInit.word = action.word
-        rememberInit.finall = action.word.length
          rememberInit.RememberOnce = true
          return rememberInit
          case INDEXINIT:

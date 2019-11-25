@@ -16,6 +16,7 @@ class Index extends Component {
       isOpened: false,
       name: '未登录',
       headUrl:'',
+      word:null
     }
   }
   
@@ -23,7 +24,6 @@ class Index extends Component {
     const userInfo=Taro.getStorageSync(
       "userInfo",
     )
-    console.log(userInfo,this.props.counter)
     this.setState({
       name:userInfo.nickName,
       headUrl:userInfo.avatarUrl,
@@ -33,6 +33,19 @@ class Index extends Component {
     Taro.navigateTo({
       url:'../remenber/index'
     })
+  }
+  Change(e){
+    console.log(e.detail.value)
+    this.setState({
+      word: e.detail.value
+    })
+  }
+  search(){
+    if(this.state.word.trim()!==null){
+      Taro.navigateTo({
+        url:`../remenber/search/index?en=${this.state.word}`
+      })
+    }
   }
   makePlan(){
     this.setState({
@@ -59,11 +72,12 @@ class Index extends Component {
     return (
       <View className='indexPage'>
         <Model isOpened={this.state.isOpened} onCancel={()=>this.onCancel()} onOk={()=>this.onOk()}/>
+
         <View className='user'>
           <Image className='userImg' src={headUrl}></Image>
           <View className='userName'>{this.state.name}</View>
-          <Input className='wordSearch' type='text' placeholder='搜索单词' />
-          <Button plain={true} className='wordSearchBtn'>搜索</Button>
+          <Input onChange={(e)=>this.Change(e)} className='wordSearch' type='text' placeholder='搜索单词' />
+          <Button onClick={()=>this.search()} plain={true} className='wordSearchBtn'>搜索</Button>
         </View>
 
         <View className='planPage'>

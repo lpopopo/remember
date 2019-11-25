@@ -4,13 +4,13 @@ import {View , Button} from  "@tarojs/components"
 import './done.scss'
 
 import { connect } from '@tarojs/redux'
-import { getRememberWord, indexInit} from '../../actions/counter'
+import { rememberInit , indexInit} from '../../actions/counter'
 
 @connect(({ counter }) => ({
     counter
   }), (dispatch) => ({
       remember(){
-          dispatch(getRememberWord())
+          dispatch(rememberInit())
       },
       indexDoneInit(){
           dispatch(indexInit())

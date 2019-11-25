@@ -71,7 +71,8 @@ class WordDetail extends Component {
     render() { 
         return (
             <View className="detail-con">
-                {this.state.detail}
+                <View className="en">{this.state.wordInEnglish}</View>
+                <View className="zh">{this.state.detail}</View>
             </View>
           );
     }

@@ -7,6 +7,7 @@ import {
 
 const  INIT_STATUS =  {
     data:  [
+        {en: "hello" , options :["你好" , "嗨" , "打的" , "测试"] , answer :0}
 ],
     index :0,
     err:[],

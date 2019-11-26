@@ -54,31 +54,30 @@ class Done extends Component {
             })
               this.props.rememberUpdate()
         }else if(this.props.type === 'review'){
-          const url = 'www.estationaeolus.xyz/vocabulary/selfTest'
-          const errWord = this.props.review.err
-          Taro.request({
-            url, 
-            data: {
-              openid,
-              errWord
-            },
-            method: "GET",
-            header: {
-              'content-type': 'application/json' // 默认值
-            },
-            //成功返回
-            success: function (res) {
-              // console.log(res)
-              if(res.statusCode==200){
-              }
-            },fail:function(){
-              Taro.showToast({
-                title: '网络异常',
-                duration: 1000,
-                icon:"none"
-              })
-            }
-          })      
+          // const url = 'www.estationaeolus.xyz/vocabulary/selfTest'
+          // // const errWord = this.props.review.err
+          // Taro.request({
+          //   url, 
+          //   data: {
+          //     openid,
+          //   },
+          //   method: "GET",
+          //   header: {
+          //     'content-type': 'application/json' // 默认值
+          //   },
+          //   //成功返回
+          //   success: function (res) {
+          //     // console.log(res)
+          //     if(res.statusCode==200){
+          //     }
+          //   },fail:function(){
+          //     Taro.showToast({
+          //       title: '网络异常',
+          //       duration: 1000,
+          //       icon:"none"
+          //     })
+          //   }
+          // })      
         }
     }
     componentDidShow(){

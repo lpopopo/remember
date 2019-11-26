@@ -6,9 +6,7 @@ import {
 
 
 const  INIT_STATUS =  {
-    data:  [{en:'hello' , options:['你好' , "嗨" , '大的' , "答案"] , answer : 0} ,
-    {en:'hi' , options:['你好' , "嗨" , '大的' , "答案"] , answer : 1},
-    {en:'big' , options:['你好' , "嗨" , '大的' , "答案"] , answer : 2}
+    data:  [
 ],
     index :0,
     err:[],

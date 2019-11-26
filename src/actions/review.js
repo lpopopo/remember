@@ -35,8 +35,11 @@ export const getWord = () =>{
                 openid
             }
         }).then((res)=>{
-            const data = res.data
+            const data = res.data.data
             console.log(res)
+            for (let index = 0; index < data.length; index++) {
+                data[index].options = res.data.data[index].options.split(",")       
+            }
             const action = ajax(data)
             dispatch(action)
         })

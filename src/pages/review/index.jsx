@@ -49,7 +49,7 @@ class Review extends Component {
 
     // 点击事件处理
     clickToAnswer(index , option){
-        if(option === index){
+        if(option == index){
             this.props.index()
         }else{
             this.props.err()

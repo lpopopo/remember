@@ -4,7 +4,7 @@ import {  CUTDOWN ,  INDEXADDOFREMEMBER , DONE  , REVIEWINDEX , REMEMBERINIT , I
 
 const INITIAL_STATE = {
   down:10,
-  word : [{en: 'hello'  , zh : '你好'}, {en : 'hi' , zh : '嗨'} , {en : 'big' , zh:'大的'}] ,
+  word : [] ,
   index : 0,
   finall:3,
   RememberOnce : true

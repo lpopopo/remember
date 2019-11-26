@@ -6,8 +6,8 @@ import './done.scss'
 import { connect } from '@tarojs/redux'
 import { rememberInit , indexInit , rememberFishUpdate} from '../../actions/counter'
 
-@connect(({ counter }) => ({
-    counter
+@connect(({ counter ,  review }) => ({
+    counter , review
   }), (dispatch) => ({
       indexDoneInit(){
           dispatch(indexInit())
@@ -22,36 +22,63 @@ class Done extends Component {
         super(props);
         this.state = {
         }
-    }
+    }    
     componentWillMount(){
         //发送请求给后端进行相应的背诵记录
         //相当于还有完成自己设定的任务才算完成任务,初始化index,一遍重新重新请求
         //请求完成之后，自动跳转回首页
+        const openid=Taro.getStorageSync("uid");
         if(this.props.type === 'remember'){
-            const openid=Taro.getStorageSync("uid");
+            const url = 'http://www.estationaeolus.xyz/vocabulary/finish'
             Taro.request({
-                url: 'http://www.estationaeolus.xyz/vocabulary/finish', 
-                data: {
-                  openid:openid,
-                },
-                method: "GET",
-                header: {
-                  'content-type': 'application/json' // 默认值
-                },
-                //成功返回
-                success: function (res) {
-                  // console.log(res)
-                  if(res.statusCode==200){
-                  }
-                },fail:function(){
-                  Taro.showToast({
-                    title: '网络异常',
-                    duration: 1000,
-                    icon:"none"
-                  })
+              url, 
+              data: {
+                openid
+              },
+              method: "GET",
+              header: {
+                'content-type': 'application/json' // 默认值
+              },
+              //成功返回
+              success: function (res) {
+                // console.log(res)
+                if(res.statusCode==200){
                 }
-              })
+              },fail:function(){
+                Taro.showToast({
+                  title: '网络异常',
+                  duration: 1000,
+                  icon:"none"
+                })
+              }
+            })
               this.props.rememberUpdate()
+        }else if(this.props.type === 'review'){
+          const url = 'www.estationaeolus.xyz/vocabulary/selfTest'
+          const errWord = this.props.review.err
+          Taro.request({
+            url, 
+            data: {
+              openid,
+              errWord
+            },
+            method: "GET",
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            //成功返回
+            success: function (res) {
+              // console.log(res)
+              if(res.statusCode==200){
+              }
+            },fail:function(){
+              Taro.showToast({
+                title: '网络异常',
+                duration: 1000,
+                icon:"none"
+              })
+            }
+          })      
         }
     }
     componentDidShow(){

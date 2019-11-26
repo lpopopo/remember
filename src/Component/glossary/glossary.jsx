@@ -10,14 +10,14 @@ class  GlossaryComponent extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            zh  : '',
+            zh : '',
             show:false
          }
          this.enToZh = this.enToZh.bind(this)
     }    
     enToZh(){
         this.setState({
-            zh : '测试'
+            zh : this.props.zh
         })
         setTimeout(()=>[
             this.setState({

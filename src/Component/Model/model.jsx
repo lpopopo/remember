@@ -6,8 +6,8 @@ import { connect } from '@tarojs/redux'
 import './model.scss'
 import { makeSure } from '../../actions/modelAction'
 
-@connect(({  }) => ({
-  
+@connect(({ openModel }) => ({
+    openModel
 }), (dispatch) => ({
   makeSure (value,navTitle) {
     dispatch(makeSure(value,navTitle))
@@ -20,8 +20,8 @@ class Model extends Component {
       this.state={
           value: 30,
           current: 0,
-          tabList:[{ title: '英语四级' }, { title: '英语六级' }, { title: '考研词汇' }],
-          navTitle:'英语四级'
+          tabList:[{ title: 'CET4' }, { title: 'CET6' }, { title: '考研词汇' }],
+          navTitle:'CET4'
       }
   }
   
@@ -44,6 +44,7 @@ class Model extends Component {
       current: value,
       navTitle: this.state.tabList[value].title
     });
+    console.log(this.state.tabList[this.state.current].title)
   }
 render () {
     const {value,tabList,navTitle}=this.state
@@ -64,7 +65,7 @@ render () {
                 <View className='modeTitile1'>学习计划</View>
                   每天背
                   <AtInputNumber
-                      min={0}
+                      min={10}
                       max={60}
                       step={1}
                       value={this.state.value}

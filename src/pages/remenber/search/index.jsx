@@ -27,6 +27,10 @@ class WordDetail extends Component {
         this.updateWord = this.updateWord.bind(this)
         this.Inquire = this.Inquire.bind(this)
     }
+    config = {
+        navigationBarTitleText: '单词详情',
+        navigationBarBackgroundColor: "#FFC42F",
+      }
     //在页面加载的初期，首先进行state的初始化，从store中获得当前的
    //英语单词，以供单词的查询
    componentDidMount () {
@@ -65,9 +69,7 @@ class WordDetail extends Component {
         })
     }
 
-    config = {
-        navigationBarTitleText: '单词详情'
-      }
+ 
     render() { 
         return (
             <View className="detail-con">

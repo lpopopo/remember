@@ -5,8 +5,13 @@ DONE,
 REVIEWINDEX,
 REMEMBERINIT,
 INDEXINIT,
-REMEMBERONCEINIT
+REMEMBERONCEINIT,
+REMEMBERFINISH
 } from '../constants/counter'
+
+import Taro, { Component } from '@tarojs/taro'
+
+import {axios} from 'taro-axios'
 
 export const cutDown = () => {
   return {
@@ -38,9 +43,10 @@ export const reviewIndex =(index) =>{
   }
 }
 
-export const rememberInit = ()=>{
+export const rememberInit = (data)=>{
   return{
-    type:REMEMBERINIT
+    type:REMEMBERINIT,
+    data
   }
 }
 
@@ -53,5 +59,24 @@ export const indexInit = ()=>{
 export const rememberOnce = () =>{
   return{
     type:REMEMBERONCEINIT
+  }
+}
+export const startremember = () =>{
+  const url = `http://www.estationaeolus.xyz/vocabulary/study`
+  const openid=Taro.getStorageSync("uid");
+  console.log('ajax',openid)
+  return (dispatch)=>{
+      axios.get(url ,{ params:{openid}}).then((res)=>{
+          const data = res.data
+          const action = rememberInit(data)
+          console.log(res)
+          dispatch(action)
+      })
+  }
+}
+
+export const rememberFishUpdate = () =>{
+  return {
+    type:REMEMBERFINISH
   }
 }

@@ -58,18 +58,16 @@ class App extends Component {
   
 
   componentWillMount() {
-    // let uid=Taro.getStorageSync("uid")
-    let uid=1;
+    let uid=Taro.getStorageSync("uid")
     if(!uid){
       Taro.login({
         success:function(res){
           console.log(res)
-          var code = res.code;
           //code发送
           Taro.request({
-            url: 'http://7uxvmw.natappfree.cc', 
+            url: 'http://www.estationaeolus.xyz/vocabulary/info', 
             data: {
-              "code":code
+              code:res.code
             },
             method: "GET",
             header: {
@@ -79,10 +77,10 @@ class App extends Component {
             success: function (res) {
               console.log(res)
               if(res.statusCode==200){
-                // Taro.setStorageSync("uid",res.data.code)
+                Taro.setStorageSync("uid",res.data.planlist[0].openid)
                 Taro.navigateTo({
                   url:'/pages/login/login'
-                })
+                }) 
               }
             },fail:function(){
               Taro.showToast({

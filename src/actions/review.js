@@ -4,6 +4,7 @@ import {
     ERRTOUCH
 }  from '../constants/review'
 import {axios} from 'taro-axios'
+import Taro from '@tarojs/taro'
 
 export const  ajax = (data) => {
     //复习单词请求数据
@@ -26,11 +27,16 @@ export const errTouch = ()=>{
 }
 
 export const getWord = () =>{
-    const url = ''
-    const user = {openid:''}
+    const url = 'http://www.estationaeolus.xyz/vocabulary/selfTest'
+    const openid=Taro.getStorageSync("uid");
     return (dispatch)=>{
-        axios.post(url , user).then((res)=>{
+        axios.get(url ,{
+            params:{
+                openid
+            }
+        }).then((res)=>{
             const data = res.data
+            console.log(res)
             const action = ajax(data)
             dispatch(action)
         })

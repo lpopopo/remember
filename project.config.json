@@ -2,7 +2,7 @@
 	"miniprogramRoot": "dist/",
 	"projectname": "remember",
 	"description": "背单词小程序",
-	"appid": "wx9f94d7223efe3487",
+	"appid": "wx33d43ae43dc093a3",
 	"setting": {
 		"urlCheck": false,
 		"es6": false,

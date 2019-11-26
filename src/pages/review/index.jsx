@@ -20,6 +20,9 @@ import {indexAddOfReview , errTouch , getWord} from '../../actions/review'
       },
       err(){
           dispatch(errTouch())
+      },
+      getreWord(){
+          dispatch(getWord())
       }
   }))
 
@@ -32,6 +35,7 @@ class Review extends Component {
         navigationBarBackgroundColor: "#FFC42F",        
     }
     componentWillMount(){
+        this.props.getreWord()
         //请求复习单词的数据
         // const action = getWord()
         // store.dispatch(action)

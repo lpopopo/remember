@@ -1,13 +1,11 @@
 import Taro, { Component } from '@tarojs/taro'
 import { connect } from '@tarojs/redux'
 import { View,Button} from '@tarojs/components'
+import {getWord} from '../../actions/review'
 
 import './reviewrap.scss'
 
 
-@connect(({  }) => ({
-  
-}))
 class Index extends Component {
 
     config = {
@@ -15,8 +13,8 @@ class Index extends Component {
     navigationBarBackgroundColor: "#FFC42F",
   }
 
-  
   toReview(){
+    // if()
     Taro.navigateTo({
         url:'../review/index',
       })

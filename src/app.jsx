@@ -77,10 +77,10 @@ class App extends Component {
             success: function (res) {
               console.log(res)
               if(res.statusCode==200){
+                // Taro.navigateTo({
+                //   url:'/pages/login/login'
+                // }) 
                 Taro.setStorageSync("uid",res.data.planlist[0].openid)
-                Taro.navigateTo({
-                  url:'/pages/login/login'
-                }) 
               }
             },fail:function(){
               Taro.showToast({

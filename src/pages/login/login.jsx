@@ -1,5 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View,Button} from '@tarojs/components'
+import './login.scss'
 
 export default class Login extends Component {
     toBegin(){
@@ -23,7 +24,7 @@ export default class Login extends Component {
     render() {
         return (
             <View>
-              <Button onGetUserInfo={()=>this.toBegin()} open-type='getUserInfo'>登录授权</Button>  
+              <Button className='loginbtn' onGetUserInfo={()=>this.toBegin()} open-type='getUserInfo'>登录授权</Button>  
             </View>
         )
     }

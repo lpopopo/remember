@@ -32,9 +32,25 @@ class Index extends Component {
     navigationBarTitleText: '背了么',
     navigationBarBackgroundColor: "#FFC42F",
   }
+   
   //初始获取首页数据
     componentDidShow(){
-      console.log(this.props)
+      const userInfo=Taro.getStorageSync(
+        "userInfo",
+      )
+      if(!userInfo){
+        Taro.navigateTo({
+          url:'../login/login'
+        })
+        this.setState({
+          name:userInfo.nickName,
+          headUrl:userInfo.avatarUrl,
+        })
+      }else{ 
+        this.setState({
+          name:userInfo.nickName,
+          headUrl:userInfo.avatarUrl,
+        })}
       const openid=Taro.getStorageSync("uid");
       const that=this;
       Taro.request({
@@ -48,7 +64,6 @@ class Index extends Component {
         },
         //成功返回
         success: function (res) {
-          // console.log(res)
           if(res.statusCode==200){
             that.setState({
               bookname:res.data.planlist[0].bookname,
@@ -65,14 +80,6 @@ class Index extends Component {
             icon:"none"
           })
         }
-      })
-      console.log(this.props)
-      const userInfo=Taro.getStorageSync(
-        "userInfo",
-      )
-      this.setState({
-        name:userInfo.nickName,
-        headUrl:userInfo.avatarUrl,
       })
     }
     //背单词函数
@@ -145,7 +152,13 @@ class Index extends Component {
         }
       })
     }
-
+    //登录
+    toLogin(){
+      console.log(11)
+      Taro.navigateTo({
+        url:'../login/login'
+      })
+    }
   render () {
     const {learned,total,datetime,words,bookname}=this.state;
     const length = learned / total *100
@@ -154,7 +167,7 @@ class Index extends Component {
         <Model isOpened={this.state.isOpened} onCancel={()=>this.onCancel()} onOk={()=>this.onOk()}/>
 
         <View className='user'>
-          <Image className='userImg' src={headUrl}></Image>
+          <Button className='userImgbtn' onClick={()=>this.toLogin()}><Image  className='userImg' src={headUrl} /></Button>
           <View className='userName'>{this.state.name}</View>
           <Input onChange={(e)=>this.Change(e)} className='wordSearch' type='text' placeholder='搜索单词' />
           <Button onClick={()=>this.search()} plain={true} className='wordSearchBtn'>搜索</Button>

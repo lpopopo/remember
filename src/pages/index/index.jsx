@@ -32,7 +32,7 @@ class Index extends Component {
     navigationBarTitleText: '背了么',
     navigationBarBackgroundColor: "#FFC42F",
   }
-   
+    
   //初始获取首页数据
     componentDidShow(){
       const userInfo=Taro.getStorageSync(
@@ -54,9 +54,9 @@ class Index extends Component {
       const openid=Taro.getStorageSync("uid");
       const that=this;
       Taro.request({
-        url: 'http://www.estationaeolus.xyz/vocabulary/getInfo', 
+        url: 'http://www.estationaeolus.xyz:8080/vocabulary/getInfo', 
         data: {
-          openid:openid,
+          openid:openid,  
         },
         method: "GET",
         header: {
@@ -121,7 +121,7 @@ class Index extends Component {
       const words=this.props.openModel.value;
       const openid=Taro.getStorageSync("uid");
       Taro.request({
-        url: 'http://www.estationaeolus.xyz/vocabulary/UpdateInfo', 
+        url: 'http://www.estationaeolus.xyz:8080/vocabulary/UpdateInfo', 
         data: {
           openid:openid,
           bookname:bookname,
@@ -154,7 +154,6 @@ class Index extends Component {
     }
     //登录
     toLogin(){
-      console.log(11)
       Taro.navigateTo({
         url:'../login/login'
       })

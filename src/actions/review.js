@@ -27,7 +27,7 @@ export const errTouch = ()=>{
 }
 
 export const getWord = () =>{
-    const url = 'http://www.estationaeolus.xyz/vocabulary/selfTest'
+    const url = 'http://www.estationaeolus.xyz:8080/vocabulary/selfTest'
     const openid=Taro.getStorageSync("uid");
     return (dispatch)=>{
         axios.get(url ,{
@@ -38,7 +38,7 @@ export const getWord = () =>{
             const data = res.data.data
             console.log(res)
             for (let index = 0; index < data.length; index++) {
-                data[index].options = res.data.data[index].options.split(",")       
+                data[index].options = res.data.data[index].options.split("$")       
             }
             const action = ajax(data)
             dispatch(action)

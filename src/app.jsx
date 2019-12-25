@@ -65,7 +65,7 @@ class App extends Component {
           console.log(res)
           //code发送
           Taro.request({
-            url: 'http://www.estationaeolus.xyz/vocabulary/info', 
+            url: 'http://www.estationaeolus.xyz:8080/vocabulary/info', 
             data: {
               code:res.code
             },
@@ -77,9 +77,6 @@ class App extends Component {
             success: function (res) {
               console.log(res)
               if(res.statusCode==200){
-                // Taro.navigateTo({
-                //   url:'/pages/login/login'
-                // }) 
                 Taro.setStorageSync("uid",res.data.planlist[0].openid)
               }
             },fail:function(){

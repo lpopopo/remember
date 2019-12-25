@@ -29,7 +29,7 @@ class Done extends Component {
         //请求完成之后，自动跳转回首页
         const openid=Taro.getStorageSync("uid");
         if(this.props.type === 'remember'){
-            const url = 'http://www.estationaeolus.xyz/vocabulary/finish'
+            const url = 'http://www.estationaeolus.xyz:8080/vocabulary/finish'
             Taro.request({
               url, 
               data: {

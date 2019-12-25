@@ -101,3 +101,67 @@ npm run dev:weapp       //启动taro,生成微信小程序文件模板
 
 ## 效果演示
 
+1.首页
+
+![首页](D:\Users\57104\Desktop\首页.png)
+
+2.计划制定
+
+![计划](D:\Users\57104\Desktop\计划.png)
+
+3.复习功能
+
+![复习功能](D:\Users\57104\Desktop\复习功能.png)
+
+4.单词本
+
+
+
+![单词本](D:\Users\57104\Desktop\单词本.png)
+
+5.单词自检
+
+![单词自检](D:\Users\57104\Desktop\单词自检.png)
+
+## 前后端交互接口
+
+1. 登录，第一次访问：url:"/vocabulary/info"
+
+   前端传：code
+
+   后端返回："planlist" json格式数组：openid，words，bookname，datetime，process
+
+2.修改计划，url:"/vocabulary/UpdateInfo"
+
+​	前端传：words，bookname
+
+​	后端返回："planlist" json格式数组：openid，words，bookname，datetime，process
+
+3.学习新单词，url:"/vocabulary/study"
+
+​	前端传：字符串类型，flag=0，主页面请求，flag=1，当前计划完成后请求
+
+​	后端返回：按照每天的计划的单词列表
+
+​	"data" json格式数组：en，词汇
+
+​				zh，中文释义，无返回当前已经没有新单词了
+
+4.复习1：生词本，url:"/vocabulary/hasLearned"
+
+​	前端传：无
+
+​	后端返回：所有已经学过的单词，按照顺序
+
+​	"data" json格式数组：en，词汇
+
+​				zh，中文释义，无返回当前还没有新单词
+
+5.复习2：单词自检：url："/vocabulary/selfTest"
+
+​	前端传：无
+
+​	后端返回："data" json格式数组：en，词汇
+
+​				zh，中文释义，无返回当前还没有新单词
+

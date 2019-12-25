@@ -62,7 +62,7 @@ export const rememberOnce = () =>{
   }
 }
 export const startremember = () =>{
-  const url = `http://www.estationaeolus.xyz/vocabulary/study`
+  const url = `http://www.estationaeolus.xyz:8080/vocabulary/study`
   const openid=Taro.getStorageSync("uid");
   console.log('ajax',openid)
   return (dispatch)=>{

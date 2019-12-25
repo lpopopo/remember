@@ -21,7 +21,7 @@ class Glossary extends Component {
         const openid=Taro.getStorageSync("uid");
         const that=this;
         Taro.request({
-          url: 'http://www.estationaeolus.xyz/vocabulary/hasLearned', 
+          url: 'http://www.estationaeolus.xyz:8080/vocabulary/hasLearned', 
           data: {
             openid:openid,
           },
